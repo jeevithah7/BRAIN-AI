@@ -1,0 +1,47 @@
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,Column 1,Parameter,Short,Panel,Organ/System,Possible Condition,Related Parameters,Common Symptoms
+,CBC Panel,,,,,,,
+,,Hemoglobin,Hb,CBC,Blood/Oxygen transport,Anemia,"RBC, HCT, MCV","Fatigue, dizziness"
+,,Hematocrit,HCT,CBC,Blood volume,Dehydration / Anemia,"RBC, Hb",Weakness
+,,Red Blood Cells,RBC,CBC,Blood,Anemia / Polycythemia,"Hb, HCT",Fatigue
+,,White Blood Cells,WBC,CBC,Immune system,Infection / Inflammation,"NEUT, LYMPH",Fever
+,,Platelet Count,PLT,CBC,Blood clotting,Bleeding disorders,"MPV, WBC",Easy bruising
+,,Mean Corpuscular Volume,MCV,CBC,RBC size,Microcytic anemia,"RBC, MCH",Fatigue
+,,Mean Corpuscular Hemoglobin,MCH,CBC,Hemoglobin in RBC,Iron deficiency anemia,MCV,Weakness
+,,Mean Corpuscular Hemoglobin Conc.,MCHC,CBC,Hemoglobin concentration,Hypochromic anemia,Hb,Pale skin
+,,Red Cell Distribution Width,RDW,CBC,RBC variation,Nutritional anemia,"RBC, MCV",Weakness
+,,Neutrophils,NEUT,CBC,Immune defense,Bacterial infection,WBC,Fever
+,,Lymphocytes,LYMPH,CBC,Immune system,Viral infection,WBC,Fatigue
+,,Monocytes,MONO,CBC,Immune cleanup,Chronic inflammation,WBC,Fever
+,,Eosinophils,EOS,CBC,Allergy response,Allergies / Parasites,WBC,Skin rash
+,,Basophils,BASO,CBC,Inflammatory response,Allergic reaction,WBC,Inflammation
+,Liver Function (LFT),,,,,,,
+,,Alanine Aminotransferase,ALT,LFT,Liver,Liver damage,"AST, ALP",Jaundice
+,,Aspartate Aminotransferase,AST,LFT,Liver/Muscle,Tissue damage,ALT,Fatigue
+,,Alkaline Phosphatase,ALP,LFT,Liver/Bone,Bile duct obstruction,ALT,Bone pain
+,,Total Bilirubin,TBIL,LFT,Liver,Jaundice,DBIL,Yellow skin
+,,Direct Bilirubin,DBIL,LFT,Liver,Bile obstruction,TBIL,Dark urine
+,,Albumin,ALB,LFT,Liver,Liver disease,TP,Swelling
+,,Total Protein,TP,LFT,Liver/Immune,Malnutrition,ALB,Weakness
+,,Gamma GT,GGT,LFT,Liver,Alcoholic liver disease,ALT,Fatigue
+,Kidney Function (RFT),,,,,,,
+,,Alanine Aminotransferase,ALT,LFT,Liver,Liver damage,"AST, ALP",Jaundice
+,,Aspartate Aminotransferase,AST,LFT,Liver/Muscle,Tissue damage,ALT,Fatigue
+,,Alkaline Phosphatase,ALP,LFT,Liver/Bone,Bile duct obstruction,ALT,Bone pain
+,,Total Bilirubin,TBIL,LFT,Liver,Jaundice,DBIL,Yellow skin
+,,Direct Bilirubin,DBIL,LFT,Liver,Bile obstruction,TBIL,Dark urine
+,,Albumin,ALB,LFT,Liver,Liver disease,TP,Swelling
+,,Total Protein,TP,LFT,Liver/Immune,Malnutrition,ALB,Weakness
+,,Gamma GT,GGT,LFT,Liver,Alcoholic liver disease,ALT,Fatigue
+,Lipid Panel,,,,,,,
+,,Total Cholesterol,TC,Lipid,Cardiovascular,Heart disease risk,"LDL, HDL",Chest pain
+,,LDL,LDL,Lipid,Cardiovascular,Artery blockage,TC,Heart risk
+,,HDL,HDL,Lipid,Cardiovascular,Protective cholesterol,TC,None
+,,Triglycerides,TG,Lipid,Metabolic,Metabolic syndrome,LDL,Obesity
+,,VLDL,VLDL,Lipid,Lipid transport,High triglycerides,TG,None
+,Thyroid Panel,,,,,,,
+,,Thyroid Stimulating Hormone,TSH,Thyroid,Thyroid gland,Hypothyroidism,"T3, T4",Fatigue
+,,Triiodothyronine,T3,Thyroid,Thyroid hormone,Hyperthyroidism,TSH,Weight loss
+,,Thyroxine,T4,Thyroid,Thyroid hormone,Hypothyroidism,TSH,Weight gain

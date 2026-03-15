@@ -1,0 +1,89 @@
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,Column 1,Standard Parameter,Short Name,Alias,Panel
+,CBC Panel,,,,
+,,Hemoglobin,Hb,Hb,CBC
+,,Hemoglobin,Hb,HGB,CBC
+,,Hemoglobin,Hb,Hemoglobin,CBC
+,,Hemoglobin,Hb,Haemoglobin,CBC
+,,Hematocrit,HCT,HCT,CBC
+,,Hematocrit,HCT,Hematocrit,CBC
+,,Hematocrit,HCT,PCV,CBC
+,,Red Blood Cells,RBC,RBC,CBC
+,,Red Blood Cells,RBC,Red Blood Cell Count,CBC
+,,Red Blood Cells,RBC,Erythrocyte Count,CBC
+,,White Blood Cells,WBC,WBC,CBC
+,,White Blood Cells,WBC,Total Leukocyte Count,CBC
+,,White Blood Cells,WBC,TLC,CBC
+,,White Blood Cells,WBC,Leukocytes,CBC
+,,Platelet Count,PLT,PLT,CBC
+,,Platelet Count,PLT,Platelets,CBC
+,,Platelet Count,PLT,Platelet Count,CBC
+,,Platelet Count,PLT,Thrombocytes,CBC
+,,Mean Corpuscular Volume,MCV,MCV,CBC
+,,Mean Corpuscular Volume,MCV,Mean Cell Volume,CBC
+,,Mean Corpuscular Hemoglobin,MCH,MCH,CBC
+,,Mean Corpuscular Hemoglobin,MCH,Mean Cell Hemoglobin,CBC
+,,Mean Corpuscular Hemoglobin Concentration,MCHC,MCHC,CBC
+,,Mean Corpuscular Hemoglobin Concentration,MCHC,Mean Cell Hemoglobin Concentration,CBC
+,,Red Cell Distribution Width,RDW,RDW,CBC
+,,Red Cell Distribution Width,RDW,RDW-CV,CBC
+,,Neutrophils,NEUT,Neutrophils,CBC
+,,Neutrophils,NEUT,Neutrophil %,CBC
+,,Lymphocytes,LYMPH,Lymphocytes,CBC
+,,Lymphocytes,LYMPH,Lymphocyte %,CBC
+,,Monocytes,MONO,Monocytes,CBC
+,,Monocytes,MONO,Monocyte %,CBC
+,,Eosinophils,EOS,Eosinophils,CBC
+,,Eosinophils,EOS,Eosinophil %,CBC
+,,Basophils,BASO,Basophils,CBC
+,,Basophils,BASO,Basophil %,CBC
+,Liver Function (LFT),,,,
+,,Alanine Aminotransferase,ALT,ALT,LFT
+,,Alanine Aminotransferase,ALT,SGPT,LFT
+,,Alanine Aminotransferase,ALT,ALT (SGPT),LFT
+,,Aspartate Aminotransferase,AST,AST,LFT
+,,Aspartate Aminotransferase,AST,SGOT,LFT
+,,Aspartate Aminotransferase,AST,AST (SGOT),LFT
+,,Alkaline Phosphatase,ALP,ALP,LFT
+,,Alkaline Phosphatase,ALP,Alkaline Phosphatase,LFT
+,,Total Bilirubin,TBIL,Total Bilirubin,LFT
+,,Total Bilirubin,TBIL,T Bilirubin,LFT
+,,Direct Bilirubin,DBIL,Direct Bilirubin,LFT
+,,Direct Bilirubin,DBIL,D Bilirubin,LFT
+,,Albumin,ALB,Albumin,LFT
+,,Albumin,ALB,Serum Albumin,LFT
+,,Total Protein,TP,Total Protein,LFT
+,,Total Protein,TP,Serum Protein,LFT
+,,Gamma-Glutamyl Transferase,GGT,GGT,LFT
+,,Gamma-Glutamyl Transferase,GGT,Gamma GT,LFT
+,Kidney Function (RFT),,,,
+,,Creatinine,CREA,Creatinine,RFT
+,,Creatinine,CREA,Serum Creatinine,RFT
+,,Urea,UREA,Urea,RFT
+,,Urea,UREA,Blood Urea,RFT
+,,Blood Urea Nitrogen,BUN,BUN,RFT
+,,Blood Urea Nitrogen,BUN,Blood Urea Nitrogen,RFT
+,,Estimated GFR,eGFR,eGFR,RFT
+,,Estimated GFR,eGFR,GFR,RFT
+,,Uric Acid,UA,Uric Acid,RFT
+,,Uric Acid,UA,Serum Uric Acid,RFT
+,Lipid Panel,,,,
+,,Total Cholesterol,TC,Total Cholesterol,Lipid
+,,Total Cholesterol,TC,Cholesterol,Lipid
+,,Low Density Lipoprotein,LDL,LDL,Lipid
+,,Low Density Lipoprotein,LDL,LDL Cholesterol,Lipid
+,,High Density Lipoprotein,HDL,HDL,Lipid
+,,High Density Lipoprotein,HDL,HDL Cholesterol,Lipid
+,,Triglycerides,TG,TG,Lipid
+,,Triglycerides,TG,Triglycerides,Lipid
+,,Very Low Density Lipoprotein,VLDL,VLDL,Lipid
+,Thyroid Panel,,,,
+,,Thyroid Stimulating Hormone,TSH,TSH,Thyroid
+,,Thyroid Stimulating Hormone,TSH,Thyroid Stimulating Hormone,Thyroid
+,,Triiodothyronine,T3,T3,Thyroid
+,,Triiodothyronine,T3,Free T3,Thyroid
+,,Thyroxine,T4,T4,Thyroid
+,,Thyroxine,T4,Free T4,Thyroid
