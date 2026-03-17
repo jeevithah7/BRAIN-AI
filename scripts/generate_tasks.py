@@ -1,25 +1,62 @@
-import os
-import json
+import cv2
+import pytesseract
+import time
 
-root = "datasets/raw_reports/pdfs"
-tasks = []
+print("========== OCR TEST SCRIPT STARTED ==========")
 
-for report in os.listdir(root):
-    report_path = os.path.join(root, report)
+start_time = time.time()
 
-    if os.path.isdir(report_path):
+try:
+    print("Setting Tesseract path...")
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-        for file in os.listdir(report_path):
+    image_path = "datasets/raw_reports/pdfs/report_1/page_1.png"
+    print(f"Loading image: {image_path}")
 
-            if file.endswith(".png"):
+    img = cv2.imread(image_path)
 
-                path = f"/data/local-files/?d={root}/{report}/{file}"
+    if img is None:
+        print("ERROR: Image could not be loaded.")
+        exit()
 
-                tasks.append({
-                    "image": path
-                })
+    print("Image loaded successfully.")
 
-with open("tasks.json", "w") as f:
-    json.dump(tasks, f, indent=2)
+    print("Starting OCR extraction...")
+    data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
 
-print(f"{len(tasks)} tasks created")
+    print("OCR completed. Drawing bounding boxes...")
+
+    total_words = 0
+
+    for i in range(len(data["text"])):
+
+        text = data["text"][i].strip()
+
+        if text != "":
+            total_words += 1
+
+            x = data["left"][i]
+            y = data["top"][i]
+            w = data["width"][i]
+            h = data["height"][i]
+
+            cv2.rectangle(img, (x, y), (x+w, y+h), (0,255,0), 2)
+            cv2.putText(img, text, (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0,255,0), 1)
+
+    print(f"Total OCR words detected: {total_words}")
+
+    print("Displaying OCR result window...")
+    cv2.imshow("OCR Result", img)
+    cv2.waitKey(0)
+
+    print("Closing window...")
+    cv2.destroyAllWindows()
+
+except Exception as e:
+    print("ERROR occurred during OCR execution:")
+    print(e)
+
+end_time = time.time()
+
+print("========== OCR TEST SCRIPT FINISHED ==========")
+print(f"Total execution time: {round(end_time - start_time, 2)} seconds")
