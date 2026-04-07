@@ -1,43 +1,9 @@
-# Python virtual environments
-.venv/
 venv/
-env/
-bloodreport_analyser-env/
-
-# Python cache
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Jupyter
-.ipynb_checkpoints/
-
-# VSCode settings
-.vscode/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Label Studio database
-*.sqlite3
-*.db
-
-# Logs
-*.log
-
-# Environment variables
 .env
-
-# Model weights
-*.pt
-*.pth
-*.ckpt
-
-# Large datasets (optional if big)
-datasets/raw_reports/
-data/
-
+.idea/
 .vscode/
-bloodreport_analyser-env/
+node_modules/
+dist/
+build/
+*.pyc
