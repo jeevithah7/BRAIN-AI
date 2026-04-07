@@ -1,204 +1,103 @@
-# B.R.A.I.N-AI
+# BrainAI - Blood Report Analyser
 
-**Blood Report Analysis & Interpretation Node**
+BrainAI is a sophisticated, full-stack clinical decision support application designed to parse, analyze, and provide actionable insights from medical blood reports. It leverages Optical Character Recognition (OCR), Machine Learning (ML), and Large Language Models (LLMs) to automatically detect anomalies in blood biomarkers and generate personalized lifestyle and dietary recommendations.
 
-B.R.A.I.N-AI is an AI-driven system designed to extract, structure, and analyze clinical blood test reports automatically.
-The project converts raw blood report PDFs into structured medical datasets, enabling machine learning models to identify abnormalities, biomarker trends, and clinical insights.
+## 🚀 Features
 
-This repository provides tools for:
+* **Intelligent Document Parsing:** Extracts key blood biomarkers from uploaded physical or digital reports (PDFs, Images) using an integrated OCR pipeline.
+* **Machine Learning Analysis:** Uses trained ML models (Scikit-learn, XGBoost, LightGBM) to classify biomarker values into Normal, Borderline, or Abnormal categories by weighing them against clinical reference ranges, patient age, and sex.
+* **AI-Powered Recommendations:** Integrates with Anthropic's Claude API to summarize critical metrics and provide targeted nutritional and lifestyle guidance.
+* **Interactive Dashboard:** Beautiful React-based frontend providing rich visualizations of historical health data and report metrics using Recharts and Framer Motion.
+* **Persistent Storage:** Cloud database synchronization powered by Supabase for managing patient histories and ML analysis results securely.
 
-* Document preprocessing
-* Medical data annotation
-* Structured dataset generation
-* Biomarker interpretation pipelines
-* Future ML model training for clinical report understanding
+## 🛠️ Technology Stack
 
----
+### Frontend
+- **Framework:** React 19 + Vite
+- **Styling:** TailwindCSS v4, clsx, tailwind-merge
+- **UI & Animations:** Framer Motion, Lucide-React
+- **Visualization:** Recharts
+- **Routing:** React Router v7
 
-# Project Overview
+### Backend
+- **Framework:** FastAPI (Python 3)
+- **OCR Pipeline:** PyTesseract, OpenCV, PyMuPDF (fitz), Google Cloud Vision
+- **Machine Learning:** Scikit-learn, XGBoost, LightGBM, Pandas, Imbalanced-learn
+- **AI Integration:** Anthropic API (Claude)
+- **Database:** Supabase (PostgreSQL)
 
-Clinical blood reports often exist as unstructured PDF documents.
-B.R.A.I.N-AI transforms these reports into **machine-readable structured data**.
+## 📁 Project Structure
 
-The system focuses on extracting information such as:
-
-* Patient information
-* Test names
-* Test values
-* Units
-* Reference ranges
-* Abnormal indicators
-
-This structured representation allows automated analysis of laboratory results.
-
----
-
-# Pipeline Architecture
-
-The workflow of B.R.A.I.N-AI follows this pipeline:
-
-```
-Blood Report PDF
-        │
-        ▼
-PDF → Image Conversion
-        │
-        ▼
-Annotation (Label Studio)
-        │
-        ▼
-Structured Dataset Generation
-        │
-        ▼
-Biomarker Analysis Engine
-        │
-        ▼
-Clinical Insights / ML Models
+```text
+brainai/
+├── backend/                  # FastAPI Application
+│   ├── api/                  # API Routers, Claude Integration, and Endpoints
+│   ├── db/                   # Supabase client configurations
+│   ├── ml/                   # ML Training and Prediction scripts
+│   ├── ocr/                  # Optical Character Recognition logic
+│   └── prompts/              # System prompts for LLMs
+├── frontend/                 # React Vite Application
+│   ├── public/
+│   └── src/                  
+│       ├── components/       # Reusable UI elements (Dashboards, Tables, Cards)
+│       ├── pages/            # Core application screens (Upload, Preview, Dashboard)
+│       └── data/             # Frontend utility objects
+├── venv/                     # Python Virtual Environment
+└── .gitignore                # Ignored files (node_modules, venv, pycache, etc.)
 ```
 
----
+## 💻 Getting Started (Local Development)
 
-# Repository Structure
+If you're studying this codebase or contributing to it, you can run the full stack locally.
 
-```
-BRAIN-AI
-│
-├── data
-│   └── biomarker_master_list.csv        # reference biomarker database
-│
-├── datasets
-│   ├── raw_reports                      # original reports
-│   └── annotations                      # annotation outputs
-│
-├── scripts
-│   ├── pdf_to_images.py                 # converts PDFs to images
-│   ├── generate_tasks.py                # creates Label Studio tasks
-│   └── organize.py                      # organizes dataset structure
-│
-├── tasks.json                           # annotation task definitions
-│
-├── .gitignore
-└── README.md
-```
+### Prerequisites
+* **Node.js**: (v18+)
+* **Python**: (3.9+)
+* **Supabase Account**: (For database configuration)
+* **Anthropic API Key**: (For AI integration)
+* Tesseract OCR installed on your system.
 
----
-
-# Dataset Annotation
-
-Medical report annotation is performed using **Label Studio**.
-
-Annotated entities include:
-
-| Entity          | Description                  |
-| --------------- | ---------------------------- |
-| Patient_Name    | Name of the patient          |
-| Age             | Patient age                  |
-| Gender          | Patient gender               |
-| Report_Date     | Date of report               |
-| Test_Name       | Name of laboratory test      |
-| Test_Value      | Measured value               |
-| Unit            | Measurement unit             |
-| Reference_Range | Normal biological range      |
-| Abnormal_Flag   | Indicator of abnormal values |
-
-This labeled dataset enables future **document AI models** to automatically extract medical parameters.
-
----
-
-# Installation
-
-Clone the repository:
+### 1. Setup the Backend
 
 ```bash
-git clone https://github.com/jeevithah7/BRAIN-AI.git
-cd BRAIN-AI
-```
+cd backend
+# Create and activate a virtual environment if you don't have one
+python -m venv ../venv
+# On Windows
+..\venv\Scripts\activate
+# Install necessary packages (including supabase, fastapi, uvicorn, opencv-python, pytesseract, scikit-learn, xgboost, lightgbm, etc.)
+pip install supabase python-dotenv pydantic fastapi uvicorn anthropic joblib pandas numpy scikit-learn xgboost lightgbm pymupdf opencv-python pytesseract google-cloud-vision imbalanced-learn
 
-Create a virtual environment:
+# Create a .env file inside backend/ and add your credentials
+# SUPABASE_URL=...
+# SUPABASE_KEY=...
+# ANTHROPIC_API_KEY=...
+
+# Start the FastAPI server
+python -m uvicorn api.main:app --reload --port 8000
+```
+> The API will be available at [http://localhost:8000](http://localhost:8000). You can visit `/docs` for the interactive Swagger UI.
+
+### 2. Setup the Frontend
 
 ```bash
-python -m venv venv
+cd frontend
+# Install Node dependencies
+npm install
+
+# Start the Vite development server
+npm run dev
 ```
+> The frontend application will run on [http://localhost:5173](http://localhost:5173).
 
-Activate environment:
+## 🗃️ Database Schema
 
-**Windows**
+The system uses the following core conceptual tables in Supabase:
+- `patients`: Stores patient demographic identifiers (Name, Age, Sex).
+- `reports`: Tracks individual uploaded report files (File URL, timestamps).
+- `blood_results`: Stores individual test metrics parsed from the report alongside the ML predicted status.
+- `recommendations`: Stores AI-generated JSON recommendations bound to a specific report.
 
-```bash
-venv\Scripts\activate
-```
+## 🤝 Contributing
 
-**Linux / Mac**
-
-```bash
-source venv/bin/activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Usage
-
-## Convert PDFs to images
-
-```bash
-python scripts/pdf_to_images.py
-```
-
-## Generate annotation tasks
-
-```bash
-python scripts/generate_tasks.py
-```
-
-## Start Label Studio
-
-```bash
-label-studio start
-```
-
-Import `tasks.json` into Label Studio to begin annotation.
-
----
-
-# Biomarker Knowledge Base
-
-The repository includes a **biomarker reference dataset** containing:
-
-* Short biomarker name
-* Panel category
-* Units
-* Male reference range
-* Female reference range
-* Clinical description
-
-This dataset enables automated interpretation of laboratory results.
-
----
-
-# Future Work
-
-Planned enhancements include:
-
-* Automated table detection using **LayoutLM / Document AI**
-* Clinical anomaly detection models
-* Biomarker trend analysis
-* Physician decision support system
-* Web interface for report upload and interpretation
-
----
-
-# License
-
-This project is licensed under the **Apache 2.0 License**.
-
----
-
-# Author
-
-**Jeevitha H**
+This project is aimed at assisting physiological analysis. When adding new medical capabilities or models, ensure appropriate evaluation against verified clinical datasets and retain mock capability (as currently integrated) for local test environments.
